@@ -77,8 +77,8 @@ const app: Record<SupportedChains, AppConfig> = {
     enableHistory: process.env.REACT_APP_ENABLE_HISTORY === 'true',
   },
   [ChainId.Hardhat]: {
-    jsonRpcUri: 'http://54.248.54.212:8545',
-    wsRpcUri: 'ws://54.248.54.212:8545',
+    jsonRpcUri: 'http://45.77.252.40:28545',
+    wsRpcUri: 'ws://45.77.252.40:28545',
     subgraphApiUri: 'http://45.77.252.40:8000/subgraphs/name/nounsdao/nouns-subgraph',
     enableHistory: process.env.REACT_APP_ENABLE_HISTORY === 'true',
   },

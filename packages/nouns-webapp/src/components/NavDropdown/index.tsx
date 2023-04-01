@@ -51,7 +51,7 @@ const NavDropDown: React.FC<NavDropDownProps> = props => {
         }}
       >
         <NavBarButton
-          buttonText={<Trans>Explore</Trans>}
+          buttonText={<Trans>BNPL</Trans>}
           buttonIcon={props.buttonIcon}
           buttonStyle={buttonStyle}
           isDropdown={true}

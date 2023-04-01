@@ -58,6 +58,11 @@
   color: black;
 }
 
+.dropDownTopCenter {
+  border-radius: 0px;
+}
+
+
 .dropDownBottom {
   border-radius: 0px 0px 10px 10px;
   padding-bottom: 0.65rem;

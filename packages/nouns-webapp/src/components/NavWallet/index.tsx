@@ -161,7 +161,23 @@ const NavWallet: React.FC<NavWalletProps> = props => {
           >
             <Trans>Switch wallet</Trans>
           </div>
-
+          <div
+            onClick={switchWalletHandler}
+            className={clsx(
+              classes.dropDownTop,
+              classes.dropDownTopCenter,
+              navDropdownClasses.button,
+              navDropdownClasses.dropdownPrimaryText,
+              usePickByState(
+                navDropdownClasses.whiteInfoSelectedTop,
+                navDropdownClasses.coolInfoSelected,
+                navDropdownClasses.warmInfoSelected,
+                history,
+              ),
+            )}
+          >
+            <Trans>Account</Trans>
+          </div>
           <div
             onClick={disconectWalletHandler}
             className={clsx(
@@ -229,6 +245,15 @@ const NavWallet: React.FC<NavWalletProps> = props => {
             onClick={switchWalletHandler}
           >
             <Trans>Switch</Trans>
+          </div>
+          <div
+            style={{
+              borderRight: `1px solid ${mobileBorderColor}`,
+              color: mobileTextColor,
+            }}
+            className={classes.mobileSwitchWalletText}
+          >
+            <Trans>Account</Trans>
           </div>
           <div className={classes.disconnectText} onClick={disconectWalletHandler}>
             <Trans>Sign out</Trans>

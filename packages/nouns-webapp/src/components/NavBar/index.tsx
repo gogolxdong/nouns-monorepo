@@ -1,6 +1,7 @@
 import { useAppSelector } from '../../hooks';
 import classes from './NavBar.module.css';
-import noggles from '../../assets/noggles.svg';
+// import noggles from '../../assets/noggles.svg';
+import noggles from '../../assets/logo.png'
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import { Nav, Navbar, Container } from 'react-bootstrap';
@@ -46,8 +47,8 @@ const NavBar = () => {
   const nonWalletButtonStyle = !useStateBg
     ? NavBarButtonStyle.WHITE_INFO
     : isCool
-    ? NavBarButtonStyle.COOL_INFO
-    : NavBarButtonStyle.WARM_INFO;
+      ? NavBarButtonStyle.COOL_INFO
+      : NavBarButtonStyle.WARM_INFO;
 
   const closeNav = () => setIsNavExpanded(false);
 
@@ -86,12 +87,121 @@ const NavBar = () => {
               )}
             </Nav.Item>
           </div>
+
           <Navbar.Toggle
             className={classes.navBarToggle}
             aria-controls="basic-navbar-nav"
             onClick={() => setIsNavExpanded(!isNavExpanded)}
           />
           <Navbar.Collapse className="justify-content-end">
+            <div className={clsx(responsiveUiUtilsClasses.desktopOnly)}>
+              <NavDropdown buttonIcon={<Noggles />} buttonStyle={nonWalletButtonStyle}>
+                <Dropdown.Item
+                  className={clsx(
+                    usePickByState(
+                      navDropdownClasses.whiteInfoSelectedBottom,
+                      navDropdownClasses.coolInfoSelected,
+                      navDropdownClasses.warmInfoSelected,
+                      history,
+                    ),
+                  )}
+                  href="/Pawn"
+                >
+                  Pawn
+                </Dropdown.Item>
+                <Dropdown.Item
+                  className={clsx(
+                    usePickByState(
+                      navDropdownClasses.whiteInfoSelectedBottom,
+                      navDropdownClasses.coolInfoSelected,
+                      navDropdownClasses.warmInfoSelected,
+                      history,
+                    ),
+                  )}
+                  href="/Vault"
+                >
+                  Vault
+                </Dropdown.Item>
+                <Dropdown.Item
+                  className={clsx(
+                    usePickByState(
+                      navDropdownClasses.whiteInfoSelectedBottom,
+                      navDropdownClasses.coolInfoSelected,
+                      navDropdownClasses.warmInfoSelected,
+                      history,
+                    ),
+                  )}
+                  href="/Account"
+                >
+                  Account
+                </Dropdown.Item>
+                <Dropdown.Item
+                  className={clsx(
+                    usePickByState(
+                      navDropdownClasses.whiteInfoSelectedBottom,
+                      navDropdownClasses.coolInfoSelected,
+                      navDropdownClasses.warmInfoSelected,
+                      history,
+                    ),
+                  )}
+                  href="/Liquidator"
+                >
+                  Liquidator
+                </Dropdown.Item>
+              </NavDropdown>
+            </div>
+            <div className={clsx(responsiveUiUtilsClasses.mobileOnly)}>
+              <Nav.Link
+                as={Link}
+                to="/Pawn"
+                className={classes.nounsNavLink}
+                onClick={closeNav}
+              >
+                <NavBarButton
+                  buttonText={<Trans>Pawn</Trans>}
+                  // FontAwesomeIcon
+                  buttonIcon={<Noggles />}
+                  buttonStyle={nonWalletButtonStyle}
+                />
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/Vault"
+                className={clsx(classes.nounsNavLink, classes.exploreButton)}
+                onClick={closeNav}
+              >
+                <NavBarButton
+                  buttonText={<Trans>Vault</Trans>}
+                  buttonIcon={<Noggles />}
+                  buttonStyle={nonWalletButtonStyle}
+                />
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/Account"
+                className={clsx(classes.nounsNavLink, classes.exploreButton)}
+                onClick={closeNav}
+              >
+                <NavBarButton
+                  buttonText={<Trans>Account</Trans>}
+                  buttonIcon={<Noggles />}
+                  buttonStyle={nonWalletButtonStyle}
+                />
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/Liquidator"
+                className={clsx(classes.nounsNavLink, classes.exploreButton)}
+                onClick={closeNav}
+              >
+                <NavBarButton
+                  buttonText={<Trans>Liquidator</Trans>}
+                  buttonIcon={<Noggles />}
+                  buttonStyle={nonWalletButtonStyle}
+                />
+              </Nav.Link>
+              
+            </div>
             <Nav.Link as={Link} to="/vote" className={classes.nounsNavLink} onClick={closeNav}>
               <NavBarButton
                 buttonText={<Trans>DAO</Trans>}
@@ -125,62 +235,8 @@ const NavBar = () => {
                 buttonStyle={nonWalletButtonStyle}
               />
             </Nav.Link>
-            <div className={clsx(responsiveUiUtilsClasses.mobileOnly)}>
-              <Nav.Link
-                as={Link}
-                to="/playground"
-                className={classes.nounsNavLink}
-                onClick={closeNav}
-              >
-                <NavBarButton
-                  buttonText={<Trans>Playground</Trans>}
-                  buttonIcon={<FontAwesomeIcon icon={faPlay} />}
-                  buttonStyle={nonWalletButtonStyle}
-                />
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="/explore"
-                className={clsx(classes.nounsNavLink, classes.exploreButton)}
-                onClick={closeNav}
-              >
-                <NavBarButton
-                  buttonText={<Trans>Nouns &amp; Traits</Trans>}
-                  buttonIcon={<Noggles />}
-                  buttonStyle={nonWalletButtonStyle}
-                />
-              </Nav.Link>
-            </div>
-            <div className={clsx(responsiveUiUtilsClasses.desktopOnly)}>
-              <NavDropdown buttonIcon={<Noggles />} buttonStyle={nonWalletButtonStyle}>
-                <Dropdown.Item
-                  className={clsx(
-                    usePickByState(
-                      navDropdownClasses.whiteInfoSelectedBottom,
-                      navDropdownClasses.coolInfoSelected,
-                      navDropdownClasses.warmInfoSelected,
-                      history,
-                    ),
-                  )}
-                  href="/explore"
-                >
-                  Nouns &amp; Traits
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className={clsx(
-                    usePickByState(
-                      navDropdownClasses.whiteInfoSelectedBottom,
-                      navDropdownClasses.coolInfoSelected,
-                      navDropdownClasses.warmInfoSelected,
-                      history,
-                    ),
-                  )}
-                  href="/playground"
-                >
-                  Playground
-                </Dropdown.Item>
-              </NavDropdown>
-            </div>
+          
+
             <NavLocaleSwitcher buttonStyle={nonWalletButtonStyle} />
             <NavWallet address={activeAccount || '0'} buttonStyle={nonWalletButtonStyle} />{' '}
           </Navbar.Collapse>
