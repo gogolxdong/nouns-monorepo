@@ -81,7 +81,7 @@ export type AppDispatch = typeof store.dispatch;
 
 const supportedChainURLs = {
   [ChainId.Mainnet]: createNetworkHttpUrl('mainnet'),
-  [ChainId.Hardhat]: 'http://45.77.252.40:28545',
+  [ChainId.Hardhat]: 'http://54.248.54.212:8545',
   [ChainId.Goerli]: createNetworkHttpUrl('goerli'),
 };
 
