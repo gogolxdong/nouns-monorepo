@@ -69,6 +69,7 @@ const useOnDisplayAuction = (): Auction | undefined => {
     const nounId = auction.activeAuction && BigNumber.from(auction.activeAuction.nounId);
     return nounId && nounId.toNumber() === onDisplayAuctionNounId;
   })?.activeAuction;
+  console.log("reduxSafeAuction:", reduxSafeAuction, "pastAuctions:",pastAuctions)
 
   return reduxSafeAuction ? deserializeAuction(reduxSafeAuction) : undefined;
 };

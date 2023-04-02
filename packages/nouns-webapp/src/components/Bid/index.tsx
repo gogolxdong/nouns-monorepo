@@ -75,6 +75,14 @@ const Bid: React.FC<{
 
   const [showConnectModal, setShowConnectModal] = useState(false);
 
+  useEffect(() => {
+    if(showBigContent) {
+      document.body.style.overflowY = 'hidden'
+    } else {
+      document.body.style.overflowY = 'scroll'
+    }
+  }, [showBigContent])
+
   const hideModalHandler = () => {
     setShowConnectModal(false);
   };
@@ -89,11 +97,11 @@ const Bid: React.FC<{
   );
 
   const { send: placeBid, state: placeBidState } = useContractFunction(
-    nounsAuctionHouseContract,
+    nounsAuctionHouseContract as any,
     AuctionHouseContractFunction.createBid,
   );
   const { send: settleAuction, state: settleAuctionState } = useContractFunction(
-    nounsAuctionHouseContract,
+    nounsAuctionHouseContract as any,
     AuctionHouseContractFunction.settleCurrentAndCreateNewAuction,
   );
 
@@ -129,7 +137,7 @@ const Bid: React.FC<{
     }
 
     const value = utils.parseEther(bidInputRef.current.value.toString());
-    const contract = connectContractToSigner(nounsAuctionHouseContract, undefined, library);
+    const contract = connectContractToSigner(nounsAuctionHouseContract as any, undefined, library);
     const gasLimit = await contract.estimateGas.createBid(auction.nounId, {
       value,
     });
@@ -308,12 +316,16 @@ const Bid: React.FC<{
                             <div className={classes.accountInfoLine}></div>
                           </div>
                           <div className={classes.transitionItem}>
-                          <span>Votable</span>
-                          <span>True</span>
+                          <span>Account XP</span>
+                          <span>670 → 870</span>
                         </div>
                         <div className={classes.transitionItem}>
-                          <span>Original Payment </span>
-                          <span>30 E</span>
+                          <span>Account Interest Discount</span>
+                          <span>20%</span>
+                        </div>
+                        <div className={classes.transitionItem}>
+                          <span>Account Value Boost</span>
+                          <span>5%</span>
                         </div>
                         <div style={{height: 12}}></div>
                         </Accordion.Body>

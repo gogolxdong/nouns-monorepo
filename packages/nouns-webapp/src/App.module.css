@@ -10,7 +10,7 @@
 /* solution to allow for sticky sidebar on Explore page */
 @media (min-width: 993px) {
   .wrapper {
-    contain: paint;
+    /* contain: paint; */
   }
 }
 @media (max-width: 992px) {

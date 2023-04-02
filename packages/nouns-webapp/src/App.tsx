@@ -50,7 +50,7 @@ function App() {
       )}
       <BrowserRouter>
         <AvatarProvider
-          provider={chainId === ChainId.Mainnet ? library : undefined}
+          provider={chainId === ChainId.Mainnet ? library as any : undefined}
           batchLookups={true}
         >
           <HackathonBanner />

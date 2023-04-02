@@ -1,0 +1,296 @@
+/* Pawn */
+
+.pawnContainer {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.pawnTitle {
+  font-family: 'Londrina Solid';
+  font-size: 4rem;
+}
+
+.pawnSubtitle {
+  margin-top: 20px;
+  font-family: 'PT Root UI', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.25px;
+  line-height: 28px;
+  font-size: 20px;
+}
+
+.pawnlearnmore {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.pawnNft {
+  display: flex;
+  margin-top: 110px;
+}
+
+.pawnSelectedBox {
+  width: 256px;
+}
+.selectedItem {
+  width: 100%;
+  height: 50px !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 10px !important;
+  font-size: 14px !important;
+}
+
+.pawnSelectedTitle {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.pawnAcceptBtn {
+  width: 100%;
+  height: 60px;
+  border-radius: 10px !important;
+  margin-top: 40px;
+  background: #000000 !important;
+  font-weight: 700 !important;
+}
+
+.pawnAcceptBtn:hover {
+  opacity: 0.8;
+}
+
+.pawnAcceptBtn:focus,
+.pawnAcceptBtn:active {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5) !important;
+  outline: #000 !important;
+  border-color: #000 !important;
+}
+
+.pawnAcceptBtn.disable:hover,
+.pawnAcceptBtn.disable:active,
+.pawnAcceptBtn.disable:focus,
+.pawnAcceptBtn.disable {
+  /* background: #000000; */
+  opacity: 0.5;
+  border: 1px solid #000000;
+  outline: none;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.viewMyPosition {
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 0px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.PawnNftList {
+  flex: 1;
+  margin-left: 24px;
+}
+
+.pawnNftItem {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+.pawnNftWrap:hover {
+  transform: scale(1.03);
+}
+
+.pawnNftWrap {
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.pawnSelectedWrap {
+  position: absolute;
+  right: 24px;
+  top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+}
+.pawnSelectedIcon {
+  width: 20px;
+  height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Vault */
+.vaultTabWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.vaulttabButton {
+    width: 300px;
+    height: 100px;
+    color: #000;
+    border-color: #000;
+    outline: none;
+    box-shadow: none;
+    font-size: 28px;
+}
+.vaulttabButton:hover
+ {
+    background: #000;
+    border-color: #000;
+    color: #fff;
+    outline: none;
+    box-shadow: none;
+}
+.vaulttabButton:active:focus {
+    box-shadow: none;
+}
+.vaulttabButton:active {
+    border-color: #000;
+    color: #fff;
+    background: #000;
+    outline: none;
+    box-shadow: none;
+}
+
+.vaulttabButton:focus {
+    border-color: #000;
+    outline: none;
+    box-shadow: none;
+}
+
+.vaulttabButton.actived {
+    background: #000;
+    color: white;
+    border-color: #000;
+    box-shadow: 0 0 0 0.25rem rgba(0,0,0,.25);
+}
+
+.selectedHasItem {
+    line-height: 50px;
+    padding-left: 12px;
+}
+
+
+.vaultTabWrap2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.depositAndWithdraw {
+  width: 100px;
+  height: 40px;
+  font-size: 14px;
+}
+
+
+.enterInputVal {
+  flex: 1;
+  padding: 16px 18px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+}
+
+
+.enterMaxVal {
+  cursor: pointer;
+  text-align: center;
+  width: 66px;
+  height: 100%;
+  padding: 16px 0;
+}
+
+.balanceRes {
+  text-align: right;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Account */
+
+
+.account-infos {
+  margin-top: 40px;
+}
+
+.account-item-info {
+  margin-top: 10px;
+}
+
+.account-nftList {
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.acc-type {
+  font-size: 24px;
+}
+
+.acc-nftListBtn {
+  margin: 0 20px;
+}
+
+.acc-chooseType {
+  margin: 0 40px
+}
+
+.acc-nftlist {
+  margin-top: 50px;
+}
+
+.acc-nftlist-item {
+  display: flex;
+  border: 1px solid #eee;
+  margin-top: 20px;
+}
+
+
+.acc-nft-img {
+  flex: 2;
+  padding-right: 20px;
+}
+.acc-nft-img-icon {
+  width: 100%;
+}
+
+.acc-nft-info {
+  flex: 2
+}
+
+.acc-nft-info-title {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.acc-nft-info-item {
+  font-size: 14px;
+  margin: 4px 0;
+  padding: 0;
+}

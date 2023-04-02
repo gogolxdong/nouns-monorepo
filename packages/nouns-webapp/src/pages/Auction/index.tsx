@@ -8,6 +8,10 @@ import useOnDisplayAuction from '../../wrappers/onDisplayAuction';
 import { useEffect } from 'react';
 import ProfileActivityFeed from '../../components/ProfileActivityFeed';
 import NounsIntroSection from '../../components/NounsIntroSection';
+import Pawn from './components/Pawn';
+import Vault from './components/Vault';
+import Account from './components/Account';
+
 
 interface AuctionPageProps {
   initialAuctionId?: number;
@@ -16,6 +20,7 @@ interface AuctionPageProps {
 const AuctionPage: React.FC<AuctionPageProps> = props => {
   const { initialAuctionId } = props;
   const onDisplayAuction = useOnDisplayAuction();
+  console.log("onDisplayAuction:",onDisplayAuction)
   const lastAuctionNounId = useAppSelector(state => state.onDisplayAuction.lastAuctionNounId);
   const onDisplayAuctionNounId = onDisplayAuction?.nounId.toNumber();
 
@@ -49,14 +54,17 @@ const AuctionPage: React.FC<AuctionPageProps> = props => {
   return (
     <>
       <Auction auction={onDisplayAuction} />
-      {onDisplayAuctionNounId !== undefined && onDisplayAuctionNounId !== lastAuctionNounId ? (
+      <Pawn />
+      <Vault />
+      <Account />
+      {/* {onDisplayAuctionNounId !== undefined && onDisplayAuctionNounId !== lastAuctionNounId ? (
         <ProfileActivityFeed nounId={onDisplayAuctionNounId} />
-      ) : (<NounsIntroSection />)}
-      <Documentation
+      ) : (<NounsIntroSection />)} */}
+      {/* <Documentation
         backgroundColor={
           onDisplayAuctionNounId === undefined || onDisplayAuctionNounId === lastAuctionNounId ? backgroundColor : undefined
         }
-      />
+      /> */}
     </>
   );
 };

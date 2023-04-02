@@ -19,7 +19,7 @@ export const useStreamRemainingBalance = (streamAddress: string) => {
 export const useWithdrawTokens = (streamAddress: string) => {
   const { library } = useEthers();
   const { send: withdrawTokens, state: withdrawTokensState } = useContractFunction(
-    new Contract(streamAddress, abi, library),
+    new Contract(streamAddress as any, abi as any, library as any) as any,
     'withdraw',
   );
   return { withdrawTokens, withdrawTokensState };

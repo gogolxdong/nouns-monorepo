@@ -31,7 +31,7 @@ import { useTreasuryBalance } from '../../hooks/useTreasuryBalance';
 import clsx from 'clsx';
 
 const NavBar = () => {
-  const activeAccount = useAppSelector(state => state.account.activeAccount);
+  const activeAccount = useAppSelector((state: any) => state.account.activeAccount);
   const stateBgColor = useAppSelector(state => state.application.stateBackgroundColor);
   const isCool = useAppSelector(state => state.application.isCoolBackground);
   const history = useHistory();
@@ -105,7 +105,7 @@ const NavBar = () => {
                       history,
                     ),
                   )}
-                  href="/Pawn"
+                  href="/#Pawn"
                 >
                   Pawn
                 </Dropdown.Item>
@@ -118,7 +118,7 @@ const NavBar = () => {
                       history,
                     ),
                   )}
-                  href="/Vault"
+                  href="/#Vault"
                 >
                   Vault
                 </Dropdown.Item>
@@ -131,7 +131,7 @@ const NavBar = () => {
                       history,
                     ),
                   )}
-                  href="/Account"
+                  href="/#Account"
                 >
                   Account
                 </Dropdown.Item>
@@ -144,7 +144,7 @@ const NavBar = () => {
                       history,
                     ),
                   )}
-                  href="/Liquidator"
+                  href="/#Liquidator"
                 >
                   Liquidator
                 </Dropdown.Item>
@@ -153,7 +153,7 @@ const NavBar = () => {
             <div className={clsx(responsiveUiUtilsClasses.mobileOnly)}>
               <Nav.Link
                 as={Link}
-                to="/Pawn"
+                to="/#Pawn"
                 className={classes.nounsNavLink}
                 onClick={closeNav}
               >
@@ -166,7 +166,7 @@ const NavBar = () => {
               </Nav.Link>
               <Nav.Link
                 as={Link}
-                to="/Vault"
+                to="/#Vault"
                 className={clsx(classes.nounsNavLink, classes.exploreButton)}
                 onClick={closeNav}
               >
@@ -178,7 +178,7 @@ const NavBar = () => {
               </Nav.Link>
               <Nav.Link
                 as={Link}
-                to="/Account"
+                to="/#Account"
                 className={clsx(classes.nounsNavLink, classes.exploreButton)}
                 onClick={closeNav}
               >
@@ -190,7 +190,7 @@ const NavBar = () => {
               </Nav.Link>
               <Nav.Link
                 as={Link}
-                to="/Liquidator"
+                to="/#Liquidator"
                 className={clsx(classes.nounsNavLink, classes.exploreButton)}
                 onClick={closeNav}
               >
